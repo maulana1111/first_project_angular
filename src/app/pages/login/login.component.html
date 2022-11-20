@@ -1,0 +1,55 @@
+<div class="container">
+  <form [formGroup]="formdata" (ngSubmit)="onClickSubmit()">
+    <h1 class="text-4xl font-bold text-center">{{ title }}</h1>
+
+    <p class="mx-4 mt-4 font-semibold">Username</p>
+    <input
+      type="text"
+      formControlName="username"
+      placeholder="Input Text ..."
+      class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 block w-full my-3 p-2.5 mx-4"
+      required
+    />
+
+    <div
+      *ngIf="formdata.get('username').errors?.required"
+      class="text-pink-600 ml-4 text-sm"
+    >
+      *username is Required
+    </div>
+
+    <p class="mx-4 mt-4 font-semibold">Password</p>
+    <input
+      type="password"
+      placeholder="Input Text ..."
+      formControlName="password"
+      class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 block w-full my-3 p-2.5 mx-4"
+    />
+
+    <div
+      *ngIf="formdata.get('password').errors?.required"
+      class="text-pink-600 ml-4 text-sm"
+    >
+      *Password is Required
+    </div>
+
+    <div *ngIf="formdata.valid; else notAllowed">
+      <button
+        type="submit"
+        class="bg-blue-400 text-white py-2 px-4 rounded-lg mx-4 mt-10"
+      >
+        Log In
+      </button>
+    </div>
+
+    <ng-template #notAllowed>
+      <button
+        type="submit"
+        class="bg-blue-400 text-white py-2 px-4 rounded-lg mx-4 mt-10 cursor-not-allowed"
+        disabled
+      >
+        Log In
+      </button></ng-template
+    >
+  </form>
+</div>

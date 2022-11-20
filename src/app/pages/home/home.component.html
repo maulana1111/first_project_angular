@@ -1,0 +1,93 @@
+<!-- <div class="container flex flex-row justify-around">
+  <h1 class="text-4xl font-bold text-center">{{ title }}</h1>
+  <img [src]="img" class="w-28" *ngIf="isShowImage" />
+</div>
+<button
+  (click)="toogleChild()"
+  class="bg-blue-400 text-white py-2 px-4 rounded-lg mx-4 mt-10"
+>
+  Hide Image
+</button>
+<button
+  (click)="toogleChild()"
+  class="bg-blue-400 text-white py-2 px-4 rounded-lg mx-4 mt-10"
+>
+  Hide Login
+</button>
+<br />
+<input
+  type="text"
+  [(ngModel)]="txt"
+  placeholder="Input Text ..."
+  class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 block w-72 my-3 p-2.5 mx-4"
+/>
+
+
+  <p class="text-lg mx-4">{{ txt }}</p> -->
+<!--
+<div class="overflow-x-auto relative shadow-md sm:rounded-lg m-3">
+  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+    <thead
+      class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+    >
+      <tr>
+        <th scope="col" class="py-3 px-6">Product name</th>
+        <th scope="col" class="py-3 px-6">Category</th>
+        <th scope="col" class="py-3 px-6">Price</th>
+        <th scope="col" class="py-3 px-6">Action</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let row of listProduct;">
+      <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+        <th
+          scope="row"
+          class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+        >
+          {{row.title}}
+        </th>
+        <td class="py-4 px-6">{{row.category}}</td>
+        <td class="py-4 px-6">{{row.price}}</td>
+        <td class="py-4 px-6">
+          <a
+            href="#"
+            class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+            >Edit</a
+          >
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+
+<div class="w-full h-full bg-gray-100 p-4">
+  <div
+    class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8"
+  >
+    <div *ngFor="let row of listProduct">
+      <div
+        class="w-72 p-2 m-2 bg-white rounded-lg shadow-md hover:cursor-pointer"
+      >
+        <img [src]="row.thumbnail" class="w-full h-52 rounded-lg" alt="image" />
+        <h1 class="font-bold text-slate-500 text-2xl my-3">{{ row.title }}</h1>
+        <p class="font-semibold text-black text-2xl mr-4">{{ row.price | currency:'USD' }}</p>
+        <div class="flex">
+          <span class="mt-2 line-through text-gray-500">$170.00</span>
+          <span
+            class="mt-3 ml-2 bg-pink-200 rounded-lg px-2 text-pink-700 text-sm"
+            >{{row.discountPercentage}}% off</span
+          >
+        </div>
+        <div class="flex mt-2">
+          <div class="flex">
+            <img src="assets/icon_star.png" class="w-8" alt="" />
+            <p class="text-gray-600 font-semibold mt-1 ml-2">{{row.rating}}</p>
+          </div>
+          <div class="mx-3 text-xl">|</div>
+          <div>
+            <p class="text-gray-600 font-semibold mt-1">Stock {{row.stock}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
