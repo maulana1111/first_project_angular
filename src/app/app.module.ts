@@ -10,10 +10,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { DetailProductComponent } from './pages/detail-product/detail-product.component';
 // import {SweetAlert2Module} from ''/
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent, LoginComponent],
+  declarations: [AppComponent, HeaderComponent, HomeComponent, LoginComponent, DetailProductComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -66,6 +66,7 @@
     <div *ngFor="let row of listProduct">
       <div
         class="w-72 p-2 m-2 bg-white rounded-lg shadow-md hover:cursor-pointer"
+        (click)="navigateToDetail(row)"
       >
         <img [src]="row.thumbnail" class="w-full h-52 rounded-lg" alt="image" />
         <h1 class="font-bold text-slate-500 text-2xl my-3">{{ row.title }}</h1>
